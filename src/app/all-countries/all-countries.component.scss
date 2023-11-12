@@ -83,6 +83,10 @@
     margin-left: auto;
 }
 
+.select-shift-right{
+    margin-left: auto;
+}
+
 .mb-48{
     margin-bottom: 48px;
 }
@@ -95,3 +99,19 @@
     font-size: 16px;
 }
 
+@media screen and (max-width: 575px) {
+    .body-magin{
+        margin-left: 16px;
+        margin-right: 16px;
+        }
+    
+        .select-shift-right{
+            margin: 40px auto 0px 0px;
+        }
+
+        .spread-sm{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
