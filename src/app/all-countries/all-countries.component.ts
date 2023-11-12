@@ -15,7 +15,9 @@ export class AllCountriesComponent implements OnInit{
    this.apiService.getAllCountries().subscribe((res:any)=>{
     res.forEach((element:any )=> {
       element.population= element.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      this.regions.push(element.region)
+      if (!this.regions.includes(element.region)) {
+        this.regions.push(element.region)
+      }
     });
     this.countries = res
    })

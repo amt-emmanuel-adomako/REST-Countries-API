@@ -18,5 +18,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   @media screen and (max-width: 575px) {
-
+    .body-magin{
+      margin-left: 16px;
+      margin-right: 16px;
+    }
   }
