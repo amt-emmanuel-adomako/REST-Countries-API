@@ -7,7 +7,80 @@
     justify-content: space-between;
 }
 
+.filter-and-sort{
+}
+
+.filter-input{
+    width: -webkit-fill-available;
+    border: none;
+    outline: 0px;
+}
+
+.filter-svg{
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+    margin-right: 24px;
+}
+.filter-container{
+
+    width: 480px;
+    height: 56px;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+}
+
 .country-card{
     width: 264px;
+    height: 336px;
     margin-bottom: 72px;
 }
+
+.country-brief-details{
+    margin: 24px 24px auto 24px;
+}
+
+.country-name{
+    color: #111517;
+    font-family: Nunito Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+
+.nav-bar-1{
+    display: flex;
+    height: 80px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+}
+
+.nav-bar-span{
+    color: #111517;
+    font-family: Nunito Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.shift-right{
+    margin-left: auto;
+}
+
+.mb-48{
+    margin-bottom: 48px;
+}
+
+.ml-8{
+    margin-left: 8px;
+}
+
+.font-16{
+    font-size: 16px;
+}
+

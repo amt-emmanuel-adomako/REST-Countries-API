@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { SingleCountryComponent } from './single-country/single-country.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MatCardModule} from '@angular/material/card';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

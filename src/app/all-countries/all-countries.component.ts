@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AllCountriesApiService } from '../services/all-countries-api.service';
 
 @Component({
@@ -6,18 +6,22 @@ import { AllCountriesApiService } from '../services/all-countries-api.service';
   templateUrl: './all-countries.component.html',
   styleUrls: ['./all-countries.component.scss']
 })
-export class AllCountriesComponent {
+export class AllCountriesComponent implements OnInit{
   
   constructor(private apiService: AllCountriesApiService){}
-  countries = [
-    {name: 'benjamin1'},
-    {name: 'benjamin2'},
-    {name: 'benjamin3'},
-    {name: 'benjamin4'},
-    {name: 'benjamin5'},
-    {name: 'benjamin6'},
-  ]
+  countries:any
+  regions:any = [ ]
   pullAllCountries(){
-    this.apiService.getAllCountries().subscribe((res:any)=>{})
+   this.apiService.getAllCountries().subscribe((res:any)=>{
+    res.forEach((element:any )=> {
+      element.population= element.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      this.regions.push(element.region)
+    });
+    this.countries = res
+   })
+  }
+
+  ngOnInit(){
+    this.pullAllCountries()
   }
 }
