@@ -6,11 +6,13 @@
 .lite-mode{
     background: #FAFAFA;
     color: #111517;
+    transition: background-color 0.3s ease;
 }
 
 .dark-mode{
     background: #202C36;
     color: #FFF;
+    transition: background-color 0.3s ease;
 }
 
 .spread{
@@ -43,6 +45,7 @@
     border-radius: 5px;
     background: #2B3844;
     box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease;
 }
 
 .sort-container{
@@ -54,6 +57,9 @@
     border: none;
 }
 
+input{
+    background: transparent;
+}
 
 
 
@@ -64,6 +70,7 @@
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease;
 }
 
 .country-card-dark{
@@ -73,6 +80,7 @@
     border-radius: 5px;
     background: #2B3844;
     box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease;
 }
 
 .country-brief-details{
@@ -92,6 +100,7 @@
     height: 80px;
     background: #FFF;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease;
 }
 
 
@@ -100,6 +109,7 @@
     height: 80px;
     background: #2B3844;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease;
 }
 
 .nav-bar-span{
@@ -127,6 +137,10 @@
 
 .font-16{
     font-size: 16px;
+}
+
+.theme-switcher{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 575px) {

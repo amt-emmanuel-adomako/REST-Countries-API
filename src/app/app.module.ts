@@ -8,7 +8,7 @@ import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { SingleCountryComponent } from './single-country/single-country.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

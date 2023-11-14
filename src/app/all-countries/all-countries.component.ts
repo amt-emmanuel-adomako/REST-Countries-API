@@ -11,10 +11,21 @@ export class AllCountriesComponent implements OnInit{
   constructor(private apiService: AllCountriesApiService, private el: ElementRef){}
   countries:any
   regions:any = [ ]
-  liteDarkBody = 'dark-mode'
-  liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
-  liteDarkNavbar = 'nav-bar-1-dark align-items-center mb-48'
-  liteDarkFilter = 'filter-container-dark d-flex col-sm-6'
+  liteDarkBody = 'lite-mode'
+  liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
+  liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
+  liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
+  lightDarkBool = false;
+  searchObjects(objects:any, searchTerm:string) {
+    return objects.filter((object:any) => {
+      return Object.keys(object).some(key => {
+        return object[key].toString().toLowerCase().includes(searchTerm.toLowerCase()); 
+      });
+    });
+  }
+
+
+  
   pullAllCountries(){
    this.apiService.getAllCountries().subscribe((res:any)=>{
     res.forEach((element:any )=> {
@@ -26,20 +37,33 @@ export class AllCountriesComponent implements OnInit{
     this.countries = res
    })
   }
-  lightDarkMode(){
-    
+  changeTheme(){
+    if (this.lightDarkBool) {
+      this.liteDarkBody = 'dark-mode'
+      this.liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
+      this.liteDarkNavbar = 'nav-bar-1-dark align-items-center mb-48'
+      this.liteDarkFilter = 'filter-container-dark d-flex col-sm-6'
+      this.lightDarkBool = !this.lightDarkBool;
+    }
+    else{
+      this.liteDarkBody = 'lite-mode'
+      this.liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
+      this.liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
+      this.liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
+      this.lightDarkBool = !this.lightDarkBool;
+    }
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    // this.countries.filter = filterValue.trim().toLowerCase();
-    // (objects, searchTerm) {
-      this.countries=  this.countries.filter((object:any) => {
-        return Object.keys(object).some(key => {
-          return object[key].toString().toLowerCase().includes(filterValue.toLowerCase()); 
-        });
-      });
-    console.log(this.countries.length)
+    if (filterValue.length) {
+      this.countries = this.searchObjects(this.countries, filterValue.trim().toLowerCase());
+    }
+    else{
+      this.pullAllCountries()
+    }
+    console.log(this.countries.length);
+    
   }
 
   ngOnInit(){
