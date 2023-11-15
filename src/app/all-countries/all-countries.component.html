@@ -19,14 +19,15 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 11H11.7L11.4 10.7C12.4 9.6 13 8.1 13 6.5C13 2.9 10.1 0 6.5 0C2.9 0 0 2.9 0 6.5C0 10.1 2.9 13 6.5 13C8.1 13 9.6 12.4 10.7 11.4L11 11.7V12.5L16 17.5L17.5 16L12.5 11ZM6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5C11 9 9 11 6.5 11Z" fill="#848484"/>
           </svg>
       </span>
-        <input (keyup)="applyFilter($event)" #input class="filter-input" type="text" placeholder="Search for a country…">
+        <!-- <input (keyup)="applyFilter($event)" #input class="filter-input" type="text" placeholder="Search for a country…"> -->
+        <input [(ngModel)]="searchString" class="filter-input" type="text" placeholder="Search for a country…">
     </div>
       <select name="" id="" class="sort-container select-shift-right col-sm-6">
         <option  *ngFor="let region of regions;" value="">{{region}}</option>
       </select>
   </div>
   <div class="row body-magin spread spread-sm ">
-    <mat-card [class]="liteDarkCard" *ngFor="let country of countries;">
+    <mat-card [class]="liteDarkCard" *ngFor="let country of countries | countryfilter:searchString">
         <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag">
         <mat-card-content>
           <!-- <p>

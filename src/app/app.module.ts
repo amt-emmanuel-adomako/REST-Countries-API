@@ -9,11 +9,14 @@ import { SingleCountryComponent } from './single-country/single-country.componen
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import { CountryfilterPipe } from './pipes/countryfilter.pipe';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     AllCountriesComponent,
-    SingleCountryComponent
+    SingleCountryComponent,
+    CountryfilterPipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     MatCardModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
