@@ -27,7 +27,7 @@
       </select>
   </div>
   <div class="row body-magin spread spread-sm ">
-    <mat-card [class]="liteDarkCard" *ngFor="let country of countries | countryfilter:searchString">
+    <mat-card (click)="goToCountry(country)" [class]="liteDarkCard" *ngFor="let country of countries | countryfilter:searchString">
         <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag">
         <mat-card-content>
           <!-- <p>

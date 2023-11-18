@@ -1,5 +1,7 @@
-import { Component, OnInit,  ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { AllCountriesApiService } from '../services/all-countries-api.service';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-all-countries',
@@ -8,7 +10,12 @@ import { AllCountriesApiService } from '../services/all-countries-api.service';
 })
 export class AllCountriesComponent implements OnInit{
   
-  constructor(private apiService: AllCountriesApiService, private el: ElementRef){}
+  constructor(
+    private apiService: AllCountriesApiService, 
+    private el: ElementRef , 
+    private router:Router,
+    private dataService: DataService
+    ){}
   countries:any
   regions:any = [ ]
   liteDarkBody = 'lite-mode'
@@ -66,7 +73,11 @@ export class AllCountriesComponent implements OnInit{
     console.log(this.countries.length);
     
   }
-
+  
+  goToCountry(country:any){
+    this.dataService.country = country
+    this.router.navigate(['country',country.name.common])
+  }
   ngOnInit(){
     this.pullAllCountries()
   }

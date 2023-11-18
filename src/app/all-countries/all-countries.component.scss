@@ -88,6 +88,9 @@ input{
     transition: background-color 0.3s ease;
 }
 
+mat-card{
+    cursor: pointer;
+}
 .country-brief-details{
     margin: 24px 24px auto 24px;
 }
