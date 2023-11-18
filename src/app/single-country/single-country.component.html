@@ -1,9 +1,31 @@
 <div class="container">
     <span class="navigation-btn">
+        <button mat-button (click)="ngOnDestroy()"><mat-icon>arrow_back</mat-icon>Back</button>
     </span>
     
     <!-- <div [ngClass]="theme ? dark : lite"></div> -->
-    <div>
-        
+    <div class="country">
+        <div class="country-flag">
+
+        </div>
+        <div class="country-details" *ngIf="this.dataService.country">
+            <span class="country-name">
+                {{dataService.country.name.common}}
+            </span>
+            <div class="sub-details">
+                <div class="details-1">
+                    <ul>
+                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                    </ul>
+                </div>
+                <div class="details-2">
+                    
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -9,6 +9,8 @@ import { SingleCountryComponent } from './single-country/single-country.componen
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import { CountryfilterPipe } from './pipes/countryfilter.pipe';
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -26,6 +28,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatSelectModule,
     MatTableModule,
+    MatButtonModule,
+    MatIconModule,
     FormsModule
   ],
   providers: [],
