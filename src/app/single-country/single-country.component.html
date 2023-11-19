@@ -9,22 +9,36 @@
 
         </div>
         <div class="country-details" *ngIf="this.dataService.country">
-            <span class="country-name">
-                {{dataService.country.name.common}}
-            </span>
-            <div class="sub-details">
-                <div class="details-1">
-                    <ul>
-                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
-                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
-                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
-                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
-                        <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
-                    </ul>
+            <div class="row">
+                <span class="country-name">
+                    {{dataService.country.name.common}}
+                </span>
+                <div class="sub-details">
+                    <div class="details-1">
+                        <ul>
+                            <li><span class="property">Native Name</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Population</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Region</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Sub Region</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Capital</span>: {{dataService.country.name.common}}</li>
+                        </ul>
+                    </div>
+                    <div class="details-2">
+                        <ul>
+                            <li><span class="property">Top Level Domain</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Currencies</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Languages</span>: {{dataService.country.name.common}}</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="details-2">
-                    
-                </div>
+            </div>
+            <div class="border-countries">
+                <span class="property">
+                    Bourder Countries: 
+                </span>
+                <ul class="border-countries-list">
+                    <li>one</li>
+                </ul>
             </div>
         </div>
     </div>
