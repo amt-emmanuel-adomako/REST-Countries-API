@@ -11,4 +11,8 @@ export class AllCountriesApiService {
   getAllCountries(){
     return this.http.get(this.all_countries_api)
   }
+
+  getNeighboringCountries(cca3:any){
+    return this.http.get(`https://restcountries.com/v3.1/alpha/${cca3}?fields=name`)
+  }
 }

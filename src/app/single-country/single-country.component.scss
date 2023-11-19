@@ -5,14 +5,16 @@
 
 .country{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .country-flag{
-
+    margin-right: 120px;
 }
 
 .country-details{
-    
+    width: 598px;
 }
 
 .details-1, .details-2{
@@ -45,9 +47,10 @@ li{
 
 .border-countries{
     display: flex;
+    padding-left: 32px;
 }
 
-.border-countries-list>li{
+.border-countries-list > li{
     width: 96px;
     height: 28px;
     border-radius: 2px;
@@ -57,4 +60,9 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px
+}
+
+.border-countries >span{
+    display: flex;
 }

@@ -1,12 +1,12 @@
 <div class="container">
     <span class="navigation-btn">
-        <button mat-button (click)="ngOnDestroy()"><mat-icon>arrow_back</mat-icon>Back</button>
+        <button mat-button [routerLink]="['/home']"><mat-icon>arrow_back</mat-icon>Back</button>
     </span>
     
     <!-- <div [ngClass]="theme ? dark : lite"></div> -->
     <div class="country">
         <div class="country-flag">
-
+            <img [src]="this.dataService.country.flags.png" alt="" srcset="">
         </div>
         <div class="country-details" *ngIf="this.dataService.country">
             <div class="row">
@@ -25,19 +25,20 @@
                     </div>
                     <div class="details-2">
                         <ul>
-                            <li><span class="property">Top Level Domain</span>: {{dataService.country.name.common}}</li>
-                            <li><span class="property">Currencies</span>: {{dataService.country.name.common}}</li>
+                            <li><span class="property">Top Level Domain</span>: {{dataService.country.tld}}</li>
+                            <li><span class="property">Currencies</span>: {{dataService.country.currencies.name}}</li>
                             <li><span class="property">Languages</span>: {{dataService.country.name.common}}</li>
                         </ul>
                     </div>
                 </div>
+                
             </div>
             <div class="border-countries">
                 <span class="property">
                     Bourder Countries: 
                 </span>
-                <ul class="border-countries-list">
-                    <li>one</li>
+                <ul class="border-countries-list row">
+                    <li *ngFor="let ne of dataService.neighbourhingCountries">{{ne}}</li>
                 </ul>
             </div>
         </div>
