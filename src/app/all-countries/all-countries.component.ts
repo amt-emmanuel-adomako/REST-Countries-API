@@ -75,11 +75,15 @@ export class AllCountriesComponent implements OnInit{
   }
   
   goToCountry(country:any){
+    console.log(country);
+    
     this.dataService.country = country
-    for (let i = 0; i < this.dataService.country.borders.length; i++) {
-      this.apiService.getNeighboringCountries(this.dataService.country.borders[i]).subscribe((res:any)=>{
-        this.dataService.neighbourhingCountries.push(res.name.common)
-      })
+    if (this.dataService.country.borders) {
+      for (let i = 0; i < this.dataService.country.borders.length; i++) {
+        this.apiService.getNeighboringCountries(this.dataService.country.borders[i]).subscribe((res:any)=>{
+          this.dataService.neighbourhingCountries.push(res.name.common)
+        })
+      }
     }
     this.router.navigate(['country',country.name.common])
   }
