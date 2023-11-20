@@ -10,20 +10,22 @@ import { DataService } from '../services/data.service';
 })
 export class AllCountriesComponent implements OnInit{
   
-  constructor(
-    private apiService: AllCountriesApiService, 
-    private el: ElementRef , 
-    private router:Router,
-    private dataService: DataService
-    ){}
-  countries:any
-  regions:any = [ ]
+  country:any 
+  neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode'
-  liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
+  liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
   liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
   liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
   lightDarkBool = true;
   searchString = ''
+  constructor(
+    private apiService: AllCountriesApiService, 
+    private el: ElementRef , 
+    private router:Router,
+    public dataService: DataService
+    ){}
+  countries:any
+  regions:any = [ ]
   searchObjects(objects:any, searchTerm:string) {
     return objects.filter((object:any) => {
       return Object.keys(object).some(key => {
