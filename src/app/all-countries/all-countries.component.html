@@ -10,12 +10,20 @@
         <!-- <input (keyup)="applyFilter($event)" #input class="filter-input" type="text" placeholder="Search for a country…"> -->
         <input [(ngModel)]="searchString" class="filter-input" type="text" placeholder="Search for a country…">
     </div>
-      <select name="" id="" class="sort-container select-shift-right col-sm-6">
-        <option  *ngFor="let region of regions;" value="">{{region}}</option>
+      <select name="" id="mySelect" (change)="onSelect($event)" [class]="dataService.liteDarkSelect">
+        <option value="">Filter by Region</option>
+        <option  *ngFor="let region of regions;" [value]="region">{{region}}</option>
       </select>
+
+        <!-- <div [class]="dataService.liteDarkSelect" >
+          <mat-select [(ngModel)]="selectedValue" name="food">
+            <mat-option selected="selectedValue" value="">Filter by Region</mat-option>
+            <mat-option *ngFor="let region of regions;" [value]="region">{{region}}</mat-option>
+        </mat-select>
+        </div> -->
   </div>
   <div class="row body-magin spread spread-sm ">
-    <mat-card (click)="goToCountry(country)" [class]="dataService.liteDarkCard" *ngFor="let country of countries | countryfilter:searchString">
+    <mat-card (click)="goToCountry(country)" [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FFF':'#2B3844' }" [class]="dataService.liteDarkCard" *ngFor="let country of countries | countryfilter:searchString:selectedValue">
         <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag">
         <mat-card-content>
           <!-- <p>

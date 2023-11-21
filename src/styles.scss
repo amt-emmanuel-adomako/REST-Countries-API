@@ -19,6 +19,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-left: 80px;
     margin-right: 80px;
 }
+.body-padding{
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+}
+  // .select-dark{
+  //   background: #2B3844;
+  // }
+
+  // .select-lite{
+  //   background: #FFF;
+  // }
 
 .lite-mode{
     background: #FAFAFA;
@@ -69,14 +81,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         color: #FFF;
     }
 }
-
-.sort-container{
+.sort-container-lite{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 56px;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.sort-container-dark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 56px;
     border-radius: 5px;
-    background: #FFF;
     box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
     border: none;
+    background: #2B3844;
+    color: #FFF;
+    transition: background-color 0.3s ease;
 }
 
 input{
@@ -183,7 +211,8 @@ mat-card{
 /// 
 .navigation-btn{
   display: flex;
-  margin: 80px auto 80px;
+  margin-bottom: 80px;
+  padding-top: 80px;
 }
 
 .country{
@@ -194,8 +223,23 @@ mat-card{
 
 .country-flag{
   margin-right: 120px;
+  width: 50%;
 }
 
+.country-flag img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.back-btn-dark{
+  background: #2B3844;
+  color: #FFF;
+}
+
+.back-btn-lite{
+  background: #FFF;
+  color: #111517;
+}
 .country-details{
   width: 598px;
 }
@@ -234,7 +278,7 @@ li{
 }
 
 .border-countries-list > li{
-  width: 96px;
+  width: fit-content;
   height: 28px;
   border-radius: 2px;
   font-weight: 300;

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { AllCountriesApiService } from '../services/all-countries-api.service';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -22,11 +22,16 @@ export class AllCountriesComponent implements OnInit{
     private apiService: AllCountriesApiService, 
     private el: ElementRef , 
     private router:Router,
-    public dataService: DataService,
-    private renderer: Renderer2
+    public dataService: DataService
     ){}
+  selectedValue: any= 'Filter by Region'
   countries:any
   regions:any = [ ]
+
+  onSelect(selectedvalue: any) {
+    this.selectedValue = selectedvalue.target.value
+  }
+
   searchObjects(objects:any, searchTerm:string) {
     return objects.filter((object:any) => {
       return Object.keys(object).some(key => {
@@ -48,34 +53,34 @@ export class AllCountriesComponent implements OnInit{
     this.countries = res
    })
   }
-  changeTheme(){
-    if (this.lightDarkBool) {
-      this.liteDarkBody = 'dark-mode'
-      this.liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
-      this.liteDarkNavbar = 'nav-bar-1-dark align-items-center mb-48'
-      this.liteDarkFilter = 'filter-container-dark d-flex col-sm-6'
-      this.lightDarkBool = !this.lightDarkBool;
-    }
-    else{
-      this.liteDarkBody = 'lite-mode'
-      this.liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
-      this.liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
-      this.liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
-      this.lightDarkBool = !this.lightDarkBool;
-    }
-  }
+  // changeTheme(){
+  //   if (this.lightDarkBool) {
+  //     this.liteDarkBody = 'dark-mode'
+  //     this.liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
+  //     this.liteDarkNavbar = 'nav-bar-1-dark align-items-center mb-48'
+  //     this.liteDarkFilter = 'filter-container-dark d-flex col-sm-6'
+  //     this.lightDarkBool = !this.lightDarkBool;
+  //   }
+  //   else{
+  //     this.liteDarkBody = 'lite-mode'
+  //     this.liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
+  //     this.liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
+  //     this.liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
+  //     this.lightDarkBool = !this.lightDarkBool;
+  //   }
+  // }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    if (filterValue.length) {
-      this.countries = this.searchObjects(this.countries, filterValue.trim().toLowerCase());
-    }
-    else{
-      this.pullAllCountries()
-    }
-    console.log(this.countries.length);
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   if (filterValue.length) {
+  //     this.countries = this.searchObjects(this.countries, filterValue.trim().toLowerCase());
+  //   }
+  //   else{
+  //     this.pullAllCountries()
+  //   }
+  //   console.log(this.countries.length);
     
-  }
+  // }
   
   goToCountry(country:any){
     console.log(country);
@@ -91,7 +96,6 @@ export class AllCountriesComponent implements OnInit{
     this.router.navigate(['country',country.name.common])
   }
   ngOnInit(){
-    this.renderer.removeClass('mat-card', 'mat-mdc-card')
     this.pullAllCountries()
   }
 }

@@ -1,6 +1,6 @@
-<div class="container">
+<div [class]="dataService.singleLiteDarkBody">
     <span class="navigation-btn">
-        <button mat-button [routerLink]="['/home']"><mat-icon>arrow_back</mat-icon>Back</button>
+        <button [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FAFAFA':'#2B3844' , 'color': dataService.lightDarkBool ? '#111517':'#FFF' }" mat-button [routerLink]="['/home']"><mat-icon>arrow_back</mat-icon>Back</button>
     </span>
     
     <!-- <div [ngClass]="theme ? dark : lite"></div> -->
@@ -38,7 +38,7 @@
                     Bourder Countries: 
                 </span>
                 <ul class="border-countries-list row">
-                    <li *ngFor="let ne of dataService.neighbourhingCountries">{{ne}}</li>
+                    <li [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FAFAFA':'#2B3844' , 'color': dataService.lightDarkBool ? '#111517':'#FFF' }" *ngFor="let ne of dataService.neighbourhingCountries">{{ne}}</li>
                 </ul>
             </div>
         </div>
