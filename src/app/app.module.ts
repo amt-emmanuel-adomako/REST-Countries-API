@@ -14,13 +14,15 @@ import {MatIconModule} from '@angular/material/icon';
 import { CountryfilterPipe } from './pipes/countryfilter.pipe';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LimitPipe } from './pipes/limit.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     AllCountriesComponent,
     SingleCountryComponent,
     CountryfilterPipe,
-    NavbarComponent
+    NavbarComponent,
+    LimitPipe
   ],
   imports: [
     BrowserModule,

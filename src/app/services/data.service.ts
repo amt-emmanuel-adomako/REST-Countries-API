@@ -7,7 +7,7 @@ export class DataService {
   country:any 
   neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode'
-  liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
+  liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
   liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
   liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
   lightDarkBool = true;

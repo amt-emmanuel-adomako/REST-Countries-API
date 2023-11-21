@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { AllCountriesApiService } from '../services/all-countries-api.service';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -13,7 +13,7 @@ export class AllCountriesComponent implements OnInit{
   country:any 
   neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode'
-  liteDarkCard = 'col-md-4 col-sm-12 country-card-dark p-0'
+  liteDarkCard = 'col-md-4 col-sm-12 country-card-lite p-0'
   liteDarkNavbar = 'nav-bar-1-lite align-items-center mb-48'
   liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
   lightDarkBool = true;
@@ -22,7 +22,8 @@ export class AllCountriesComponent implements OnInit{
     private apiService: AllCountriesApiService, 
     private el: ElementRef , 
     private router:Router,
-    public dataService: DataService
+    public dataService: DataService,
+    private renderer: Renderer2
     ){}
   countries:any
   regions:any = [ ]
@@ -90,6 +91,7 @@ export class AllCountriesComponent implements OnInit{
     this.router.navigate(['country',country.name.common])
   }
   ngOnInit(){
+    this.renderer.removeClass('mat-card', 'mat-mdc-card')
     this.pullAllCountries()
   }
 }

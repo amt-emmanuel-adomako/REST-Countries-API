@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-const fruits = ['apple', 'banana', 'orange', 'kiwi', 'mango'];
 @Pipe({
   name: 'countryfilter'
 })
