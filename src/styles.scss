@@ -184,7 +184,11 @@ mat-card{
         margin-left: 16px;
         margin-right: 16px;
         }
-    
+        .body-padding {
+          padding-left: 10px; 
+          padding-right: 10px; 
+          padding-bottom: 80px;
+      }
         .select-shift-right{
             margin: 40px auto 0px 0px;
         }
@@ -194,10 +198,46 @@ mat-card{
             flex-wrap: wrap;
             justify-content: center;
         }
+        .country{
+          display: flex;
+          width: 100%;
+          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+
+      .country-card-lite {
+        width: 100%;
+        height: unset;
+        margin-bottom: 72px;
+        border-radius: 5px;
+        background: #FFF;
+        box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+        transition: background-color 0.3s ease;
     }
-// @media screen and (max-width: 767px) {
     
-//   }
+    .country-flag {
+      margin-right: 0px; 
+      width: 100%;
+  }
+  .country-card-dark {
+    width: unset;
+    height: 336px;
+    margin-bottom: 72px;
+    border-radius: 5px;
+    background-color: #2B3844;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease;
+    color: #FFF;
+}
+    }
+@media screen and (min-width: 575px) {
+    .country-flag{
+      margin-right: 120px;
+      width: 50%;
+    }
+  }
 
 //   @media screen and (max-width: 575px) {
 //     .body-magin{
@@ -221,10 +261,10 @@ mat-card{
   justify-content: space-between;
 }
 
-.country-flag{
-  margin-right: 120px;
-  width: 50%;
-}
+// .country-flag{
+//   margin-right: 120px;
+//   width: 50%;
+// }
 
 .country-flag img{
   width: 100%;

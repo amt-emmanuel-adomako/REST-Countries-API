@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CountryfilterPipe implements PipeTransform {
 
   transform(values: any, searchTerm:string, continent:string) {
+    searchTerm = searchTerm.toLowerCase()
     console.log(continent);
     const resultArray:any =[]
     

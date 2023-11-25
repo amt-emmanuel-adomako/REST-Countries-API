@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,8 @@ import { LimitPipe } from './pipes/limit.pipe';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

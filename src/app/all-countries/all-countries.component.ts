@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./all-countries.component.scss']
 })
 export class AllCountriesComponent implements OnInit{
-  
+  dataRecieved =false
   country:any 
   neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode'
@@ -51,6 +51,7 @@ export class AllCountriesComponent implements OnInit{
       }
     });
     this.countries = res
+    this.dataRecieved = false
    })
   }
   // changeTheme(){
@@ -94,8 +95,11 @@ export class AllCountriesComponent implements OnInit{
       }
     }
     this.router.navigate(['country',country.name.common])
+    console.log('country',country.name.common);
+    
   }
   ngOnInit(){
+    this.dataRecieved = true
     this.pullAllCountries()
   }
 }

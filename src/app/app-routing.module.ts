@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { SingleCountryComponent } from './single-country/single-country.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path:'home', component:AllCountriesComponent},
   {path:'country/:name', component:SingleCountryComponent}
 ];

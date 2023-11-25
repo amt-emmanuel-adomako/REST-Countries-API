@@ -23,6 +23,9 @@
         </div> -->
   </div>
   <div class="row body-magin spread spread-sm ">
+    <div class="spinner" *ngIf="dataRecieved">
+      <mat-spinner></mat-spinner>
+    </div>
     <mat-card (click)="goToCountry(country)" [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FFF':'#2B3844' }" [class]="dataService.liteDarkCard" *ngFor="let country of countries | countryfilter:searchString:selectedValue">
         <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag">
         <mat-card-content>
