@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   country:any 
+  countries:any
   neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode container-fluid'
   singleLiteDarkBody = 'lite-mode container-fluid body-padding'

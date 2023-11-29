@@ -51,6 +51,7 @@ export class AllCountriesComponent implements OnInit{
       }
     });
     this.countries = res
+    this.dataService.countries = res
     this.dataRecieved = false
    })
   }
@@ -89,11 +90,19 @@ export class AllCountriesComponent implements OnInit{
     this.dataService.country = country
     if (this.dataService.country.borders) {
       for (let i = 0; i < this.dataService.country.borders.length; i++) {
-        this.apiService.getNeighboringCountries(this.dataService.country.borders[i]).subscribe((res:any)=>{
-          this.dataService.neighbourhingCountries.push(res.name.common)
-        })
+        // this.apiService.getNeighboringCountries(this.dataService.country.borders[i]).subscribe((res:any)=>{
+        //   this.dataService.neighbourhingCountries.push(res.name.common)
+        // })
+        for (let j = 0; j < this.dataService.countries.length; j++) {
+          if (this.dataService.countries[j].cca3 === this.dataService.country.borders[i]) {
+            this.dataService.neighbourhingCountries.push(this.dataService.countries[j].name.common)
+          }
+        }
       }
+
+      
     }
+
     this.router.navigate(['country',country.name.common])
     console.log('country',country.name.common);
     
