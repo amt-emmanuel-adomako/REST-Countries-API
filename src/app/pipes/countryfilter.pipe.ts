@@ -1,10 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { DataService } from '../services/data.service';
 @Pipe({
   name: 'countryfilter'
 })
 
 export class CountryfilterPipe implements PipeTransform {
-
+  constructor(private dataService:DataService){}
   transform(values: any, searchTerm:string, continent:string) {
     searchTerm = searchTerm.toLowerCase()
     console.log(continent);
@@ -53,6 +54,12 @@ export class CountryfilterPipe implements PipeTransform {
       }
     }
   }
+  if (resultArray) {
+    this.dataService.doesNotExist.exist = true
+    this.dataService.doesNotExist.term = searchTerm
+    return resultArray
+  }
+  this.dataService.doesNotExist.exist = false
   return resultArray
   }
 

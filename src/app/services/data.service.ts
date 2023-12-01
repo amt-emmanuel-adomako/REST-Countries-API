@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class DataService {
   country:any 
   countries:any
+  fill = '#848484'
+  doesNotExist = {exist:false, term:''}
   neighbourhingCountries:any = []
   liteDarkBody = 'lite-mode container-fluid'
   singleLiteDarkBody = 'lite-mode container-fluid body-padding'
@@ -25,6 +27,7 @@ export class DataService {
       this.liteDarkFilter = 'filter-container-dark d-flex col-sm-6'
       this.liteDarkSelect = 'sort-container-dark select-shift-right col-sm-6'
       this.lightDarkBool = !this.lightDarkBool;
+      this.fill = '#fff'
     }
     else{
       this.liteDarkBody = 'lite-mode'
@@ -34,6 +37,7 @@ export class DataService {
       this.liteDarkFilter = 'filter-container-lite d-flex col-sm-6'
       this.liteDarkSelect = 'sort-container-lite select-shift-right col-sm-6'
       this.lightDarkBool = !this.lightDarkBool;
+      this.fill = '#848484'
     }
   }
 }

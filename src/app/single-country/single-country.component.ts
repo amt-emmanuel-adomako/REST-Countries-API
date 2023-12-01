@@ -22,8 +22,10 @@ export class SingleCountryComponent implements OnInit{
     }
     console.log('country component loaded');
     console.log(this.dataService.country);
-    console.log(Object.values(this.dataService.country.languages));
-    this.languages = Object.values(this.dataService.country.languages).join(', ')
+    // console.log(Object.values(this.dataService.country.languages));
+    if (Object.values(this.dataService.country.languages)) {
+      this.languages = Object.values(this.dataService.country.languages).join(', ')
+    }
     // for (let i = 0; i < Object.values(this.dataService.country.languages); i++) {
     //   const element = array[i];
       
