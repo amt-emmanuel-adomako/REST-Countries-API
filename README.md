@@ -31,6 +31,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. ng add angular-cli-ghpages
 
-2. ng build --base-ref "./"
+2. ng build
+
+2. change the base ref of index.html in the built folder to "./"
 
 3. npx angular-cli-ghpages --dir=dist/[app-built-folder-name]
+example: npx angular-cli-ghpages --dir=dist/rest-countries-api
