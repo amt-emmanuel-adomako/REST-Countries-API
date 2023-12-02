@@ -10,18 +10,10 @@ export class CountryfilterPipe implements PipeTransform {
     searchTerm = searchTerm.toLowerCase()
     console.log(continent);
     const resultArray:any =[]
-    
   if(searchTerm === '' && continent === 'Filter by Region'){
+    values = [...new Set(values)]
     return values
   }
-  // if(searchTerm.length && continent === 'Filter by Region'){
-  //   for (const item of values) {
-  //     if (item.name.common.toLowerCase().includes(searchTerm)) {
-  //       resultArray.push(item)
-  //     }
-  //   }
-    
-  // }
   if(searchTerm.length){
     if (continent != 'Filter by Region') {
       for (const item of values) {
@@ -30,6 +22,7 @@ export class CountryfilterPipe implements PipeTransform {
         }
       }
     } else {
+      this.dataService.doesNotExist.term = searchTerm
       for (const item of values) {
         if (item.name.common.toLowerCase().includes(searchTerm)) {
           resultArray.push(item)
@@ -54,13 +47,13 @@ export class CountryfilterPipe implements PipeTransform {
       }
     }
   }
-  if (resultArray) {
-    this.dataService.doesNotExist.exist = true
+  if (resultArray.length) {
+    this.dataService.doesNotExist.exist = false
     this.dataService.doesNotExist.term = searchTerm
-    return resultArray
+    return [...new Set(resultArray)];
   }
-  this.dataService.doesNotExist.exist = false
-  return resultArray
+    this.dataService.doesNotExist.exist = true
+    return [...new Set(resultArray)];
   }
 
 }
