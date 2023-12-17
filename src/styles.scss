@@ -178,7 +178,7 @@ mat-card{
 }
 
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 768px) {
   .m-sm{
     padding-left: 16px;
     padding-right: 16px;
@@ -273,7 +273,7 @@ mat-card{
       padding-top: 64px;
     }
     }
-@media screen and (min-width: 575px) {
+@media screen and (min-width: 768px) {
     .country-flag{
       margin-right: 120px;
       width: 50%;
