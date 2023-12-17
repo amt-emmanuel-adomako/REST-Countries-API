@@ -29,3 +29,32 @@
     font-weight: 800;
     line-height: normal;
 }
+
+
+@media screen and (max-width: 575px) {
+    .nav-bar-span{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .nav-bar-1-lite{
+        padding: 16px;
+        display: flex;
+        height: 80px;
+        background: #FFF;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+        transition: background-color 0.3s ease;
+    }
+    
+    
+    .nav-bar-1-dark{
+        padding: 16px;
+        display: flex;
+        height: 80px;
+        background: #2B3844;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+        transition: background-color 0.3s ease;
+        color: #FFF;
+    }
+}

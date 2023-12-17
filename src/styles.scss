@@ -36,7 +36,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #FAFAFA;
     color: #111517;
     transition: background-color 0.3s ease;
-    height: 100%;
+    // height: 100%;
     overflow: auto;
 }
 
@@ -44,7 +44,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #202C36;
     color: #FFF;
     transition: background-color 0.3s ease;
-    height: 100%;
+    // height: 100%;
     overflow: auto;
 }
 
@@ -146,13 +146,7 @@ mat-card{
     margin: 24px 24px auto 24px;
 }
 
-.country-name{
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 26px;
-    margin-bottom: 16px;
-}
+
 
 
 .shift-right{
@@ -185,13 +179,27 @@ mat-card{
 
 
 @media screen and (max-width: 575px) {
+  .m-sm{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .select-shift-right{
+    margin:40px 0px 0px 0px;
+  }
+  .m-card{
+    width: 264px;
+  }
+  #mySelect {
+    margin:0px;
+  }
     .body-magin{
         margin-left: 16px;
         margin-right: 16px;
         }
         .body-padding {
-          padding-left: 10px; 
-          padding-right: 10px; 
+          padding-left: 28px; 
+          padding-right: 28px; 
           padding-bottom: 80px;
       }
         .select-shift-right{
@@ -222,25 +230,84 @@ mat-card{
         transition: background-color 0.3s ease;
     }
     
-    .country-flag {
-      margin-right: 0px; 
-      width: 100%;
-  }
-  .country-card-dark {
-    width: unset;
-    height: 336px;
-    margin-bottom: 72px;
-    border-radius: 5px;
-    background-color: #2B3844;
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
-    transition: background-color 0.3s ease;
-    color: #FFF;
-}
+      .country-flag {
+        margin-right: 0px; 
+        width: 100%;
+        height: 276px;
+    }
+      .border-countries {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+      .border-countries-list {
+        margin-left: 0px;
+      }
+      .country-card-dark {
+        width: unset;
+        height: 336px;
+        margin-bottom: 72px;
+        border-radius: 5px;
+        background-color: #2B3844;
+        box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+        transition: background-color 0.3s ease;
+        color: #FFF;
+    }
+      .custom-gutter{
+        --bs-gutter-y: 75px;
+        justify-content: center;
+      }
+      .country-internal-detail{
+        margin-bottom: 34px;
+      }
+      .country-name{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 26px;
+        margin-bottom: 16px;
+    }
+    .navigation-btn{
+      display: flex;
+      margin-bottom: 40px;
+      padding-top: 64px;
+    }
     }
 @media screen and (min-width: 575px) {
     .country-flag{
       margin-right: 120px;
       width: 50%;
+      height: 483.169px;
+    }
+    .navigation-btn{
+      display: flex;
+      margin-bottom: 80px;
+      padding-top: 80px;
+    }
+    .country-name{
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 26px;
+      margin-bottom: 23px;
+  }
+    .custom-gutter{
+      --bs-gutter-x: 75px;
+      --bs-gutter-y: 75px;
+      margin-left: -50px; 
+      margin-right: -50px;
+      justify-content: space-between;
+    }
+    .border-countries-list{
+      margin-left: 10px;
+    }
+    
+    .country-details{
+      width: 598px;
+      padding-top: 32px;
+    }
+    .country-internal-detail{
+      margin-bottom: 70px;
     }
   }
 
@@ -254,11 +321,7 @@ mat-card{
 //////////////// single country
 /// 
 /// 
-.navigation-btn{
-  display: flex;
-  margin-bottom: 80px;
-  padding-top: 80px;
-}
+
 
 .country{
   display: flex;
@@ -285,20 +348,12 @@ mat-card{
   background: #FFF;
   color: #111517;
 }
-.country-details{
-  width: 598px;
-}
 
 .details-1, .details-2{
   line-height: 32px
 }
 
-.country-name{
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
+
 
 .sub-details{
   display: flex;
@@ -322,9 +377,7 @@ li{
   display: flex;
   // padding-left: 32px;
 }
-.border-countries-list{
-  margin-left: 10px;
-}
+
 .border-countries-list > li{
   width: fit-content;
   height: 28px;

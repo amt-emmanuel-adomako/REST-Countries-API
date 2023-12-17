@@ -1,7 +1,7 @@
 <!-- <div class="container-fluid p-0"> -->
 <div [class]="dataService.liteDarkBody" style="padding: 0px;">
 <div class="container">
-  <div class="mb-48 mt-48 d-flex row">
+  <div class="mb-48 mt-48 d-flex row m-sm">
     <div [class]="dataService.liteDarkFilter">
       <span class="filter-svg">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -18,15 +18,17 @@
       </select>
     </div>
   </div>
-  <div class="row spread-sm ">
+  <div class="row spread-sm custom-gutter">
   <!-- <div class="row spread spread-sm "> -->
     <div class="spinner" *ngIf="dataRecieved">
       <mat-spinner></mat-spinner>
     </div>
-    <mat-card (click)="goToCountry(country)" [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FFF':'#2B3844' }" [class]="dataService.liteDarkCard" *ngFor="let country of countries | countryfilter:searchString:selectedValue">
+    <div style="height: 336px; " class="col-3 m-card" (click)="goToCountry(country)"  *ngFor="let country of countries | countryfilter:searchString:selectedValue">
+    <!-- <div (click)="goToCountry(country)" [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FFF':'#2B3844' }" [class]="dataService.liteDarkCard" *ngFor="let country of countries | countryfilter:searchString:selectedValue"> -->
+      <mat-card class="h-100" [ngStyle]="{'background-color': dataService.lightDarkBool ? '#FFF':'#2B3844' }">
         <!-- <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag"> -->
         <img mat-card-image style="height: 160px;" [src]="country.flags.png" alt="Photo of a country's flag">
-        <mat-card-content>
+        <mat-card-content class="p-0">
           <!-- <p>
             {{country.name.official}}
           </p> -->
@@ -48,6 +50,8 @@
           </div>
         </mat-card-content>
       </mat-card>
+    </div>
+    
       <span *ngIf="dataService.doesNotExist.exist"><i>no country with the name "{{dataService.doesNotExist.term}}" exist</i></span>
   </div>
 </div>
