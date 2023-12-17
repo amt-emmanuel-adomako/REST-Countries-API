@@ -265,8 +265,14 @@ mat-card{
         font-style: normal;
         font-weight: 800;
         line-height: 26px;
-        margin-bottom: 16px;
     }
+
+    .detail-country-name{
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 800;
+      margin-bottom: 16px;
+  }
     .navigation-btn{
       display: flex;
       margin-bottom: 40px;
@@ -284,12 +290,19 @@ mat-card{
       margin-bottom: 80px;
       padding-top: 80px;
     }
+
+    .detail-country-name{
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 800;
+      margin-bottom: 16px;
+  }
+
     .country-name{
       font-size: 18px;
       font-style: normal;
       font-weight: 800;
       line-height: 26px;
-      margin-bottom: 23px;
   }
     .custom-gutter{
       --bs-gutter-x: 75px;
