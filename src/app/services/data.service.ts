@@ -1,12 +1,45 @@
 import { Injectable } from '@angular/core';
 
+interface countriesData{
+name:any
+tld: [],
+cca2: string,
+ccn3: string,
+cca3: string,
+independent: boolean,
+status: string,
+unMember: boolean,
+currencies: object,
+idd: object,
+capital: [],
+altSpellings: [],
+region: string,
+subregion: string,
+languages: object,
+translations: object,
+latlng: [],
+landlocked: boolean,
+area: number,
+demonyms: object,
+flag: string,
+maps: object,
+population: number,
+car: object,
+timezones: [],
+continents: [],
+flags: object,
+coatOfArms: object,
+startOfWeek: string,
+capitalInfo: object,
+postalCode: object
+
+}
 @Injectable({
   providedIn: 'root'
 })
-
 export class DataService {
   country:any 
-  countries:[]=[]
+  countries:countriesData[]=[]
   fill = '#848484'
   doesNotExist = {exist:false, term:''}
   neighbourhingCountries:any = []
