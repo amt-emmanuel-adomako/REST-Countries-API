@@ -232,8 +232,8 @@ mat-card{
     
       .country-flag {
         margin-right: 0px; 
-        max-width: 559.715px;
-        height: 276px;
+        width: 319.837px;
+        // height: 276px;
     }
       .border-countries {
         display: flex;
@@ -281,9 +281,8 @@ mat-card{
     }
 @media screen and (min-width: 576px) {
     .country-flag{
-      margin-right: 120px;
-      width: 50%;
-      height: 483.169px;
+      margin-right: 0px; 
+      width: 559.715px;
     }
     .navigation-btn{
       display: flex;

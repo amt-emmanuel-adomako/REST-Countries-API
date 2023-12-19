@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
   country:any 
-  countries:any
+  countries:[]=[]
   fill = '#848484'
   doesNotExist = {exist:false, term:''}
   neighbourhingCountries:any = []
