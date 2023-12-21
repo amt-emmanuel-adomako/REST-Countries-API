@@ -20,8 +20,8 @@ export class SingleCountryComponent implements OnInit{
     if (!this.dataService.country) {
       this.router.navigate(['home'])
     }
+    document.body.classList.add(this.dataService.liteDarkBody.split(" ")[0])
     console.log('country component loaded');
-    console.log(this.dataService.country);
     // console.log(Object.values(this.dataService.country.languages));
     if (Object.values(this.dataService.country.languages)) {
       this.languages = Object.values(this.dataService.country.languages).join(', ')
